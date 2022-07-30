@@ -1,6 +1,10 @@
 # TeamMerge plugin
 ### Allows you to quickly make massive teams just by setting them as other party 
 
+
+https://user-images.githubusercontent.com/81880849/181936815-bb72f3b6-d05f-40a0-a020-64f204ba98ba.mp4
+
+
 ## Usage:
 1. Make sure that your server support more than 4 character parties (you can set in config.json in main folder of grasscutter)
    <br>You must change value of: **server>game>gameOptions>avatarLimits>singlePlayerTeam**
