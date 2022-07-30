@@ -1,5 +1,6 @@
 # TeamMerge plugin
 ### Allows you to quickly make massive teams just by setting them as other party 
+https://user-images.githubusercontent.com/81880849/181936279-65082155-928b-4fb4-b03a-879e3cacd0db.mp4
 
 ## Usage:
 1. Make sure that your server support more than 4 character parties (you can set in config.json in main folder of grasscutter)
@@ -27,4 +28,6 @@ Is you want to change something in current big party then go to party setup and 
 - Grasscutter team for making PluginTemplate and Grasscutter itself
 - Me for everything else
 
-[Demo](https://cdn.discordapp.com/attachments/1000137819215384697/1002966889808543845/Genshin_Impact_2022.07.30_-_17.51.18.04.DVR_Trim.mp4)
+
+
+
