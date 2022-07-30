@@ -31,12 +31,12 @@ public final class TeamMerge implements CommandHandler {
                     targetPlayer.getTeamManager().addAvatarToCurrentTeam(avatar);
                 }
             }
-            if (sender != null) {
-                CommandHandler.sendMessage(targetPlayer, "Characters added to party, it nothing changed then look into Github README");
-            }
-            else {
-                Grasscutter.getLogger().info("Characters added to party, it nothing changed then look into Github README");
-            }
+        }
+        if (sender != null) {
+            CommandHandler.sendMessage(targetPlayer, "Characters added to party, if nothing changed then look into Github README");
+        }
+        else {
+            Grasscutter.getLogger().info("Characters added to party, if nothing changed then look into Github README");
         }
     }
 }
