@@ -27,7 +27,7 @@ Is you want to change something in current big party then go to party setup and 
 5. Just use /team add
    - I'm lazy and I thought it's cooler, also it's easier because /team requires avatarId but plugin just takes it from game
 6. Your error handling sucks
-   - You're right, if you know how to make proper error handling or how to get data from **config.json** then make pull request or dm me on discord **Penelopeep#7963**
+   - You're right, if you know how to make proper error handling or how to get data from **config.json** then make pull request or dm me on discord **<a href="https://discord.com/users/276265598508466176">Penelopeep#7963</a>**
 
 ## Credits:
 
