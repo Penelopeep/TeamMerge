@@ -6,25 +6,40 @@ import emu.grasscutter.command.CommandHandler;
 import emu.grasscutter.game.avatar.Avatar;
 import emu.grasscutter.game.entity.EntityAvatar;
 import emu.grasscutter.game.player.Player;
-import emu.grasscutter.game.player.TeamInfo;
+import pene.gc.teammerge.utils.SettingEditor;
 
 import java.util.List;
 
 @Command(label = "TeamMerge", aliases = {"party", "tm"})
 public final class TeamMerge implements CommandHandler {
-    @Override
-    public void execute(Player sender,Player targetPlayer, List<String> args) {
-        int TeamSize = 0;
+    public int getTeamSize(Player targetPlayer){
+        int TeamSize;
         if (targetPlayer.isInMultiplayer()) {
             TeamSize = Grasscutter.getConfig().server.game.gameOptions.avatarLimits.multiplayerTeam;
         }
         else {
             TeamSize = Grasscutter.getConfig().server.game.gameOptions.avatarLimits.singlePlayerTeam;
         }
+        return TeamSize;
+    }
+    @Override
+    public void execute(Player sender,Player targetPlayer, List<String> args) {
+        int TeamSize = getTeamSize(targetPlayer);
+        int OldTeamSize = TeamSize; //I'll use it someday
+        if (TeamSize==2 || TeamSize==4){
+            SettingEditor.ChangeTeamSize(targetPlayer,40); //Size 40 since there's now maximum of 10 teams
+            TeamSize=getTeamSize(targetPlayer);
+            if (TeamSize==OldTeamSize){
+                if(sender!=null){
+                    CommandHandler.sendMessage(sender,"TeamMerge couldn't change server setting");
+                } else {
+                    Grasscutter.getLogger().error("TeamMerge couldn't change server setting");
+                }
+            }
+        }
         for (int i = 1; i <= targetPlayer.getTeamManager().getTeams().size(); i++) {
             try {
-                TeamInfo ti = targetPlayer.getTeamManager().getTeams().get(i);
-                List<Integer> tiAvatars = ti.getAvatars();
+                List<Integer> tiAvatars = targetPlayer.getTeamManager().getTeams().get(i).getAvatars();
                 for (int avatarid : tiAvatars) {
                     int addChar = 0;
                     List<EntityAvatar> entityAvatarList = targetPlayer.getTeamManager().getActiveTeam();
